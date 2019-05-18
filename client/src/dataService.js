@@ -54,6 +54,9 @@ class DataService {
                     to: '',
                     price: 1000
                 };
+                if (!res) {
+                    return {}
+                }
                 res.outboundFlights.forEach((item) => {
                     toData[moment(item.departureDates[0]).format(dateFormat)] = item.price.amount
                 });

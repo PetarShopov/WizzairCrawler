@@ -2,7 +2,7 @@ var axios = require('axios');
 
 const getData = async (formData) => {
 	try {
-		return await axios.post('https://be.wizzair.com/9.10.1/Api/search/timetable', formData, {
+		return await axios.post('https://be.wizzair.com/9.10.2/Api/search/timetable', formData, {  //should be changed on every wizzair api update (often)
 			headers: {
 				'Content-Type': 'application/json'
 			}
