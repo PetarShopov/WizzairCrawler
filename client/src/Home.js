@@ -25,7 +25,6 @@ class Home extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
 
     handleChange(event) {
@@ -53,7 +52,7 @@ class Home extends Component {
 
     render() {
         let outboundFlights, returnFlights;
-        let { data, toPrice, backPrice, destination, bestPrice, limitPrice, startDate } = this.state;
+        let { data, toPrice, destination, bestPrice, limitPrice, startDate } = this.state;
         if (data.outboundFlights) {
             outboundFlights = data.outboundFlights.map((outbound, index) => {
                 if (outbound.price.amount > Number(this.state.limitPrice)) {
@@ -77,7 +76,7 @@ class Home extends Component {
                     limitPrice={limitPrice} 
                     bestPrice={bestPrice} 
                     toPrice={toPrice} 
-                    backPrice={backPrice} 
+                    backPrice={toPrice} 
                     handleChange={this.handleChange} 
                     handleSubmit={this.handleSubmit}></Navigation>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
